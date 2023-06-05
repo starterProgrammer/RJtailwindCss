@@ -1,69 +1,77 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* Tailwind css  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
   }
-  a:hover {
-    color: #747bff;
+
+
+  body::-webkit-scrollbar{
+    scroll-behavior: smooth;
+    scrollbar-width:thin;
+    scrollbar-color:rgb(66,245,141)  rgb(66,245,141);
   }
-  button {
-    background-color: #f9f9f9;
+
+  body::-webkit-scrollbar{
+    @apply w-1.5;
+  }
+
+  body::-webkit-scrollbar-track{
+    @apply bg-gradient-to-b from-slate-100 to-gray-100 
+  }
+
+
+
+  body::-webkit-scrollbar-thumb{
+    @apply rounded-full bg-gradient-to-tr from-emerald-500 to-green-500 
+  }
+  .travigo-container {
+    @apply w-[85vw] xl:w-[95vw] m-auto;
+  }
+
+  .button-emelan {
+    @apply bg-gradient-to-b from-emerald-500 to-green-500 
+           shadow-lg shadow-emerald-400 rounded-full text-lg 
+           sm:text-sm px-9 py-1.5 transition-all duration-200 
+           active:scale-90 text-white  sm:w-48;
+  }
+
+  .button-black {
+    @apply  bg-black text-white
+            shadow-lg shadow-slate-200 rounded-full text-sm 
+            sm:text-sm py-1.5 transition-all duration-200 
+            active:scale-90  sm:w-48;
+   }
+
+  .button-light {
+   @apply  bg-gradient-to-b from-white  to-slate-100 
+           shadow-lg shadow-slate-200 rounded-full text-lg 
+           sm:text-sm px-9 py-1.5 transition-all duration-200 
+           active:scale-90 text-black sm:w-48;
+  }
+
+  /*  */
+  .drop-shadow-emerlad {
+    filter: drop-shadow(0.1rem 0.1rem 1rem rgba(74 222 128 / 80%))
+  }
+
+  .scroll-hidden{
+     display:none !important;
+  }
+
+
+  /* Navbar */
+  .nav-default {
+    @apply flex items-center justify-center fixed top-8 lg:top-5 left-0 right-0 transition-all duration-300;
+  }
+  .nav-sticky{
+    @apply bg-white/80 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 flex items-center h-[9vh] fixed top-0 left-0 right-0 opacity-100 z-[100] shadow-sm shadow-slate-100;
   }
 }
